@@ -1,6 +1,6 @@
 {
   "name": "form-thing",
-  "version": "0.1.7",
+  "version": "0.2.1",
   "description": "React form library offering simplified creation of complex forms with robust validation and management.",
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs",

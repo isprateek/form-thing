@@ -35,3 +35,8 @@ export interface InputProps {
   style?: CSSProperties;
   className?: string;
 }
+
+export interface FormErrorProps {
+  formControlName: string;
+  validatorKey: string;
+}
