@@ -1,6 +1,24 @@
-import React, { useState } from "react";
+import React, { CSSProperties, useState } from "react";
 import FormContext from "../context/FormContext";
-import { FormThingProps, FormGroupState } from "../types/types";
+
+interface FormThingProps {
+  children: React.ReactNode;
+  formGroup: FormGroupState;
+  style?: CSSProperties;
+  className?: string;
+  submit: (form: FormGroupState) => void;
+}
+
+interface FormGroupState {
+  [key: string]: FormControlState;
+}
+
+interface FormControlState {
+  value: string;
+  validators: { [key: string]: (value: string) => boolean | string };
+  touched: boolean;
+  dirty: boolean;
+}
 
 const FormThing: React.FC<FormThingProps> = ({
   children,

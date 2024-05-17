@@ -1,6 +1,22 @@
 import { useContext } from "react";
 import FormContext from "./FormContext";
-import { FormContextType } from "../types/types";
+
+interface FormContextType {
+  formState: FormGroupState;
+  setFormState: React.Dispatch<React.SetStateAction<FormGroupState>>;
+  getFormControl: (name: string) => FormControlState;
+}
+
+interface FormGroupState {
+  [key: string]: FormControlState;
+}
+
+interface FormControlState {
+  value: string;
+  validators: { [key: string]: (value: string) => boolean | string };
+  touched: boolean;
+  dirty: boolean;
+}
 
 export const useFormContext = (): FormContextType => {
   const context = useContext(FormContext);

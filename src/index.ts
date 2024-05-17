@@ -3,4 +3,3 @@ export { default as FormError } from "./components/FormError/FormError";
 export { default as FormThing } from "./components/FormThing/FormThing";
 export { default as Input } from "./components/Input/Input";
 export { default as Validators } from "./components/Validators/Validators";
-export * from "./components/types/types";

@@ -1,4 +1,6 @@
-import { ValidatorFn } from "../types/types";
+interface ValidatorFn {
+  (value: string): boolean | string;
+}
 
 class Validators {
   static min(min: number) {

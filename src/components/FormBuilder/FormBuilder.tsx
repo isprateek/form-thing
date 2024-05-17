@@ -1,4 +1,17 @@
-import { ValidatorFn, FormGroupState } from "../types/types";
+interface ValidatorFn {
+  (value: string): boolean | string;
+}
+
+interface FormGroupState {
+  [key: string]: FormControlState;
+}
+
+interface FormControlState {
+  value: string;
+  validators: { [key: string]: (value: string) => boolean | string };
+  touched: boolean;
+  dirty: boolean;
+}
 
 const FormBuilder = {
   group: (config: {

@@ -1,6 +1,9 @@
 import React from "react";
 import { useFormContext } from "../context/useFormContext";
-import { FormErrorProps } from "../types/types";
+export interface FormErrorProps {
+  formControlName: string;
+  validatorKey: string;
+}
 
 const FormError: React.FC<FormErrorProps> = ({
   formControlName,

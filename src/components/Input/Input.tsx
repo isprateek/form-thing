@@ -1,6 +1,23 @@
-import React, { ChangeEvent } from "react";
+import React, { CSSProperties, ChangeEvent } from "react";
 import { useFormContext } from "../context/useFormContext";
-import { FormGroupState, InputProps } from "../types/types";
+
+interface FormGroupState {
+  [key: string]: FormControlState;
+}
+
+interface FormControlState {
+  value: string;
+  validators: { [key: string]: (value: string) => boolean | string };
+  touched: boolean;
+  dirty: boolean;
+}
+
+interface InputProps {
+  formControlName: string;
+  placeholder?: string;
+  style?: CSSProperties;
+  className?: string;
+}
 
 const Input: React.FC<InputProps> = ({
   formControlName,
