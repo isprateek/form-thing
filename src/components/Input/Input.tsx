@@ -43,6 +43,9 @@ const Input: React.FC<InputProps> = ({
   };
 
   const control = formState[formControlName];
+  if (!control) {
+    throw new Error(`No form control found for name: ${formControlName}`);
+  }
 
   return (
     <input

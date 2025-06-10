@@ -21,7 +21,7 @@ interface FormControlState {
 export const useFormContext = (): FormContextType => {
   const context = useContext(FormContext);
   if (!context) {
-    throw new Error("useFormContext must be used within a FormProvider");
+    throw new Error("useFormContext must be used within a FormThing component");
   }
   return context;
 };
